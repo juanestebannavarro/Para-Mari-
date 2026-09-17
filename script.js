@@ -2,7 +2,7 @@ const canvas = document.getElementById("c");
 const ctx = canvas.getContext("2d");
 const mensaje = document.getElementById("mensaje");
 
-let W, H, cx, cy, scale;
+let W, H, cx, cy, scale, dpr;
 let particles = [];
 const TEXT = "I love you";
 const NUM_PARTICLES = 130;
@@ -16,10 +16,17 @@ function heartY(t) {
 }
 
 function setup() {
+  dpr = window.devicePixelRatio || 1;
+
   W = window.innerWidth;
   H = window.innerHeight;
-  canvas.width = W;
-  canvas.height = H;
+
+  canvas.width = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width = W + "px";
+  canvas.style.height = H + "px";
+
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
   cx = W / 2;
   cy = H * 0.42;
