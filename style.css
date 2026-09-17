@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #000;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mensaje {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffb3c6;
+  text-align: center;
+  text-shadow: 0 0 12px rgba(255, 105, 150, 0.8);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  pointer-events: none;
+  width: 90%;
+  max-width: 500px;
+}
